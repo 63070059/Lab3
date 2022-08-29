@@ -9,12 +9,20 @@ import java.util.Objects;
 
 @RestController
 public class CustomerController {
-    private List<Customer> customer = new ArrayList<Customer>
-            (Arrays.asList( new Customer("1010", "John", "Male", 25),
-            new Customer("1018", "Peter", "Male", 24),
-            new Customer("1019", "Sara", "Female", 23),
-            new Customer("1110", "Rose", "Female", 23),
-            new Customer("1001", "Emma", "Female", 30)));
+    private List<Customer> customer = new ArrayList<>();
+//    private List<Customer> customer = new ArrayList<Customer>
+//            (Arrays.asList( new Customer("1010", "John", "Male", 25),
+//            new Customer("1018", "Peter", "Male", 24),
+//            new Customer("1019", "Sara", "Female", 23),
+//            new Customer("1110", "Rose", "Female", 23),
+//            new Customer("1001", "Emma", "Female", 30)));
+    public CustomerController() {
+        customer.add(new Customer("1010", "John", "Male", 25));
+        customer.add(new Customer("1018", "Peter", "Male", 24));
+        customer.add(new Customer("1019", "Sara", "Female", 23));
+        customer.add(new Customer("1110", "Rose", "Female", 23));
+        customer.add(new Customer("1001", "Emma", "Female", 30));
+    }
     @RequestMapping(value = "/customers", method = RequestMethod.GET)
     public List<Customer> getCustomer(){
         return customer;
