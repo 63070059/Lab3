@@ -14,7 +14,7 @@ public class Customer {
         } else if (s.equals("male") || s.equals("Male")) {
             this.sex = true;
         }
-        if(age < 0){
+        if(a < 0){
             this.age = 0;
         }else {
             this.age = a;
